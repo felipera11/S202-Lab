@@ -1,5 +1,33 @@
-[
+[ 
     {
-        
+        "assunto": "Programacao orientada a objetos",
+        "professor": "Lucas",
+        "alunos": [
+            "Maria",
+            "Pedro",
+            "Joao",
+            "Jose"
+        ],
+        "__comment": "coloquei as variaveis de acordo com a classe Aula do relatorio 1"
+    },
+    {
+        "assunto": "Algoritmos 1",
+        "professor": "Joao Pedro",
+        "alunos": [
+            "Bruninho",
+            "Pedrinho",
+            "Joaozinho",
+            "Marquinho"
+        ]
+    },
+    {
+        "assunto": "Digital 2",
+        "professor": "Pedro Joao",
+        "alunos": [
+            "Brunao",
+            "Pedrao",
+            "Joaozao",
+            "Marcao"
+        ]
     }
 ]
