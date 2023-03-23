@@ -1,4 +1,5 @@
 Relatorio2/print aulas.jpg
 Relatorio3/.venv
 Relatorio3/__pycache__
-
+__pycache__/
+.venv/
