@@ -28,7 +28,7 @@
         preco: {
           bsonType: 'double',
           minimum: 0,
-          description: 'deve ser um double maior que 0'
+          description: 'deve ser um double > 0'
         }
       }
     }
