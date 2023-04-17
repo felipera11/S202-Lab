@@ -1,11 +1,9 @@
 from database import Database
-from writeAJson import writeAJson
-from personModel import PersonModel
-from cli import PersonCLI
+from MotoristaDAO import MotoristaDAO
+from MotoristaCLI import MotoristaCLI
 
 db = Database(database="ExAv1", collection="Motorista")
-personModel = PersonModel(database=db)
+motoristaDAO = MotoristaDAO(database=db)
 
-
-personCLI = PersonCLI(personModel)
-personCLI.run()
+motoristaCLI = MotoristaCLI(motoristaDAO)
+motoristaCLI.run()

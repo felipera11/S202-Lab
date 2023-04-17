@@ -1,7 +1,4 @@
-from typing import Collection
 import pymongo # pip install pymongo
-from dataset import dataset
-
 
 class Database:
     def __init__(self, database, collection):
