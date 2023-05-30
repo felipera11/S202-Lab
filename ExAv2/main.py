@@ -25,7 +25,7 @@ print("Média da população"+str(get_db.get_avg_population()))
 
 print("Cidades com cep 37540-000"+str(get_db.get_cep_srs()))
 
-print("3 letra do nome dos professores"+str(get_db.teacher()))
+print("3 letra do nome dos professores"+str(get_db.get_teacher_letter()))
 
 #questao 3
 

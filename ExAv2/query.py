@@ -37,7 +37,7 @@ class Query:
       results = self.db.execute_query(query)
       return [result["new_name"] for result in results]
 
-    def teacher(self):
+    def get_teacher_letter(self):
       query = "MATCH (t:Teacher) RETURN SUBSTRING(t.name, 2, 1) AS characther"
       results = self.db.execute_query(query)
       return [result["characther"] for result in results]
