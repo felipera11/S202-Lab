@@ -6,7 +6,7 @@ db=Database("bolt://localhost:7687", "neo4j", "password")
 
 cli_db = AvaliacaoCRUD(db)
 
-teachercli = AvaliacaoCLI(cli_db)
-teachercli.run()
+avalcli = AvaliacaoCLI(cli_db)
+avalcli.run()
 
 db.close()
