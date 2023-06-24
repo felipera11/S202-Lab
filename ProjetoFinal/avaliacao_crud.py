@@ -25,23 +25,32 @@ class AvaliacaoCRUD:
 
     
     def read_person(self, name):
-        query = "MATCH (p:Pessoa {name: $name}) RETURN p AS pessoa_name"
+        query = "MATCH (p:Pessoa {name: $name}) RETURN p.name AS pessoa_name, p.idade AS pessoa_idade, p.sexo AS pessoa_sexo"
         parameters = {"name": name}
         results = self.db.execute_query(query, parameters)
-        return [result["pessoa_name"] for result in results]
+        pessoa_name = str([result["pessoa_name"] for result in results])
+        pessoa_idade = str([result["pessoa_idade"] for result in results])
+        pessoa_sexo = str([result["pessoa_sexo"] for result in results])
+        return ["O nome da pessoa é: " + pessoa_name + ", a idade é: " + pessoa_idade + " e o sexo é: " + pessoa_sexo]
+        #return [(result["pessoa_name"], result["pessoa_idade"], result["pessoa_sexo"]) for result in results]
     
     def read_movie(self, name):
-        query = "MATCH (f:Filme {name: $name}) RETURN f AS filme_name"
+        query = "MATCH (f:Filme {name: $name}) RETURN f.name AS filme_name, f.ano_lanc AS filme_ano_lanc, f.diretor AS filme_diretor, f.genero AS filme_genero"
         parameters = {"name": name}
         results = self.db.execute_query(query, parameters)
-        return [result["filme_name"] for result in results]
+        filme_name = str([result["filme_name"] for result in results])
+        filme_ano_lanc = str([result["filme_ano_lanc"] for result in results])
+        filme_diretor = str([result["filme_diretor"] for result in results])
+        filme_genero = str([result["filme_genero"] for result in results])
+        return ["O nome do filme é: " + filme_name + ", o ano de lançamento é: " + filme_ano_lanc + ", o diretor é: " + filme_diretor + " e o gênero é: " + filme_genero]
     
     def read_aval(self, name, movie):
-        query = "MATCH (p:Pessoa {name: $name})-[a:AVALIOU]->(f:Filme {movie: $movie}) RETURN a AS aval_name"
+        query = "MATCH (p:Pessoa {name: $name})-[a:AVALIOU]->(f:Filme {name: $movie}) RETURN a.nota AS filme_nota, a.comentario AS filme_comentario"
         parameters = {"name": name, "movie": movie}
         results = self.db.execute_query(query, parameters)
-        return [result["aval_name"] for result in results]
-    
+        filme_nota = str([result["filme_nota"] for result in results])
+        filme_comentario = str([result["filme_comentario"] for result in results])
+        return ["A pessoa " + name + " deu nota " + filme_nota + " e comentou: " + filme_comentario + " sobre o filme " + movie]
 
 
     def delete_movie(self, name):
