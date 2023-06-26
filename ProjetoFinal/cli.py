@@ -87,6 +87,6 @@ class AvaliacaoCLI(SimpleCLI):
 
 
     def run(self):
-        print("Welcome to the Teacher CLI!")
+        print("Welcome to the Movie CLI!")
         print("Available commands: {}".format(list(self.commands.keys())))
         super().run()
